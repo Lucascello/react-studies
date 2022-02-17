@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import SeasonDisplay from "./SeasonDisplay";
+import Loader from "./Loader";
 
 // const App = () => {
 //     window.navigator.geolocation.getCurrentPosition(
@@ -56,7 +57,7 @@ class App extends React.Component {
             return <SeasonDisplay latitude={this.state.latitude} />;
         }
 
-        return <div>Loading</div>;
+        return <Loader />;
 
         // This code below would show both messages at the same time, giving either Latitude or Error (even while loading the latitude)
         // return (

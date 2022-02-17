@@ -1,4 +1,16 @@
+import "./SeasonDisplay.css";
 import React from "react";
+
+const seasonConfig = {
+    summer: {
+        text: "Let's hit the beach",
+        iconName: "sun",
+    },
+    winter: {
+        text: "Burr, it's cold",
+        iconName: "snowflake",
+    },
+};
 
 const getSeason = (latitude, month) => {
     if (month > 2 && month < 9) {
@@ -11,22 +23,25 @@ const getSeason = (latitude, month) => {
 const SeasonDisplay = (props) => {
     const season = getSeason(props.latitude, new Date().getMonth);
     // console.log("Whats the season?", season);
-    const text =
-        season === "winter" ? "Burr, it's chilly" : "Let's hit the beach";
-    const icon = season === "winter" ? "snowflake" : "sun";
+    // const text =
+    //     season === "winter" ? "Burr, it's chilly" : "Let's hit the beach";
+    // const iconName = season === "winter" ? "snowflake" : "sun";
+
+    // Better version of the ternary operators
+    const { text, iconName } = seasonConfig[season];
 
     // console.log("Latitude in the SeasonDisplay component:", props.latitude);
     return (
-        <div>
+        <div className={`season-display ${season}`}>
             {/* <h1>
                 {season === "winter"
                     ? "Burr, it's chilly"
                     : "Let's hit the beach"}
             </h1> */}
             {/* better way of writting h1 the code above */}
-            <i className={`${icon} icon`} />
+            <i className={`icon-left massive ${iconName} icon`} />
             <h1>{text}</h1>
-            <i className={`${icon} icon`} />
+            <i className={`icon-right massive ${iconName} icon`} />
         </div>
     );
 };
