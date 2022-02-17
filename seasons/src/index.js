@@ -13,18 +13,37 @@ class App extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { latitude: null };
+        this.state = { latitude: null, errorMessage: "" };
 
         window.navigator.geolocation.getCurrentPosition(
             (position) => {
                 this.setState({ latitude: position.coords.latitude });
             },
-            (err) => console.log(err)
+            (err) => {
+                this.setState({ errorMessage: err.message });
+            }
         );
     }
 
     render() {
-        return <div>Latitude: {this.state.latitude} </div>;
+        if (this.state.errorMessage && !this.state.latitude) {
+            return <div>Error: {this.state.errorMessage}</div>;
+        }
+
+        if (!this.state.errorMessage && this.state.latitude) {
+            return <div>Latitude: {this.state.latitude}</div>;
+        }
+
+        return <div>Loading</div>;
+
+        // This code below would show both messages at the same time, giving either Latitude or Error (even while loading the latitude)
+        // return (
+        //     <div>
+        //         Latitude: {this.state.latitude}
+        //         <br />
+        //         Error :{this.state.errorMessage}
+        //     </div>
+        // );
     }
 }
 
