@@ -14,14 +14,17 @@ class App extends React.Component {
         super(props);
 
         this.state = { latitude: null };
+
+        window.navigator.geolocation.getCurrentPosition(
+            (position) => {
+                this.setState({ latitude: position.coords.latitude });
+            },
+            (err) => console.log(err)
+        );
     }
 
     render() {
-        window.navigator.geolocation.getCurrentPosition(
-            (position) => console.log("position :)", position),
-            (err) => console.log(err)
-        );
-        return <div>Latitude: </div>;
+        return <div>Latitude: {this.state.latitude} </div>;
     }
 }
 
