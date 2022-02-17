@@ -14,16 +14,28 @@ class App extends React.Component {
         super(props);
 
         this.state = { latitude: null, errorMessage: "" };
-
-        window.navigator.geolocation.getCurrentPosition(
-            (position) => {
-                this.setState({ latitude: position.coords.latitude });
-            },
-            (err) => {
-                this.setState({ errorMessage: err.message });
-            }
-        );
     }
+
+    componentDidMount() {
+        console.log("My component did mount");
+        window.navigator.geolocation.getCurrentPosition(
+            (position) => this.setState({ latitude: position.coords.latitude }),
+            (err) => this.setState({ errorMessage: err.message })
+        );
+
+        //  window.navigator.geolocation.getCurrentPosition(
+        //      (position) => {
+        //          this.setState({ latitude: position.coords.latitude });
+        //      },
+        //      (err) => {
+        //          this.setState({ errorMessage: err.message });
+        //      }
+        //  );
+    }
+
+    // componentDidUpdate() {
+    //     console.log("My component did update");
+    // }
 
     render() {
         if (this.state.errorMessage && !this.state.latitude) {
