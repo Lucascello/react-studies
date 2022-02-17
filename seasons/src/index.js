@@ -10,11 +10,14 @@ import ReactDOM from "react-dom";
 // };
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-        this.state = { latitude: null, errorMessage: "" };
-    }
+    //     this.state = { latitude: null, errorMessage: "" };
+    // }
+
+    //This abreviated way of writing is equal to using constructors
+    state = { latitude: null, errorMessage: "" };
 
     componentDidMount() {
         console.log("My component did mount");
