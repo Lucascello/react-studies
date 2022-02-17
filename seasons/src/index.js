@@ -57,7 +57,7 @@ class App extends React.Component {
             return <SeasonDisplay latitude={this.state.latitude} />;
         }
 
-        return <Loader />;
+        return <Loader message="Please accept share location" />;
 
         // This code below would show both messages at the same time, giving either Latitude or Error (even while loading the latitude)
         // return (
