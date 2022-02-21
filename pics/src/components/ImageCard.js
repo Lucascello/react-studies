@@ -1,12 +1,40 @@
 import React from "react";
 
 export default class ImageCard extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { spans: 0 };
+
+        this.imageRef = React.createRef();
+    }
+
+    componentDidMount() {
+        // console.log("image Ref:", this.imageRef);
+        // This console.log below prints the height of the image befor it has been loaded, that's why it initially comes back at 0
+        // console.log("image Ref:", this.imageRef.current.clientHeight);
+
+        this.imageRef.current.addEventListener("load", this.setSpans);
+    }
+
+    setSpans = () => {
+        // console.log(
+        //     "image Ref inside the setSpans function:",
+        //     this.imageRef.current.clientHeight
+        // );
+
+        const height = this.imageRef.current.clientHeight;
+        const spans = Math.ceil(height / 10);
+
+        this.setState({ spans });
+    };
+
     render() {
         const { description, urls } = this.props.image;
 
         return (
-            <div>
-                <img alt={description} src={urls.regular} />
+            <div style={{ gridRowEnd: `span ${this.state.spans}` }}>
+                <img ref={this.imageRef} alt={description} src={urls.regular} />
             </div>
         );
     }
