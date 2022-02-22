@@ -6,6 +6,7 @@ export default class ImageCard extends React.Component {
 
         this.state = { spans: 0 };
 
+        // React Ref are a system to give direct access to single DOM element that is rendered by a component. like -> document.querySelector("img").clientHeight.
         this.imageRef = React.createRef();
     }
 
