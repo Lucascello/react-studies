@@ -12,7 +12,7 @@ export default class ImageCard extends React.Component {
 
     componentDidMount() {
         // console.log("image Ref:", this.imageRef);
-        // This console.log below prints the height of the image befor it has been loaded, that's why it initially comes back at 0
+        // This console.log below prints the height of the image before it has been loaded, that's why it initially comes back at 0
         // console.log("image Ref:", this.imageRef.current.clientHeight);
 
         this.imageRef.current.addEventListener("load", this.setSpans);
