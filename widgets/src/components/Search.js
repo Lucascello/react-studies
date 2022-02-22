@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { render } from "react-dom";
 
 const Search = () => {
     const [term, setTerm] = useState("");
     const [results, setResults] = useState([]);
 
-    console.log("results from the Search: ", results);
+    // console.log("results from the Search: ", results);
 
     useEffect(() => {
         const search = async () => {
@@ -29,6 +30,20 @@ const Search = () => {
         }
     }, [term]);
 
+    const renderedResults = results.map((result) => {
+        return (
+            <div key={result.pageid} className="item">
+                <div className="content">
+                    <div className="header">{result.title}</div>
+                    <span
+                        dangerouslySetInnerHTML={{ __html: result.snippet }}
+                    ></span>
+                    {/* {result.snippet} */}
+                </div>
+            </div>
+        );
+    });
+
     return (
         <div>
             <div className="ui form">
@@ -41,6 +56,7 @@ const Search = () => {
                     />
                 </div>
             </div>
+            <div className="ui celled list">{renderedResults}</div>
         </div>
     );
 };
