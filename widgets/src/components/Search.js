@@ -3,21 +3,30 @@ import axios from "axios";
 
 const Search = () => {
     const [term, setTerm] = useState("");
+    const [results, setResults] = useState([]);
+
+    console.log("results from the Search: ", results);
 
     useEffect(() => {
         const search = async () => {
-            await axios.get("https://en.wikipedia.org/w/api.php", {
-                params: {
-                    action: "query",
-                    list: "search",
-                    origin: "*",
-                    format: "json",
-                    srsearch: term,
-                },
-            });
+            const { data } = await axios.get(
+                "https://en.wikipedia.org/w/api.php",
+                {
+                    params: {
+                        action: "query",
+                        list: "search",
+                        origin: "*",
+                        format: "json",
+                        srsearch: term,
+                    },
+                }
+            );
+            setResults(data.query.search);
         };
 
-        search();
+        if (term) {
+            search();
+        }
     }, [term]);
 
     return (
