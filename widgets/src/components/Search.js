@@ -41,7 +41,7 @@ const Search = () => {
         }
     }, [debouncedTerm]);
 
-    //This version below, although easier to view (only 1 useEffect), creates more trouble
+    //This version below, although easier to view (only 1 useEffect), creates more trouble.
     // useEffect(() => {
     //     const search = async () => {
     //         const { data } = await axios.get(
