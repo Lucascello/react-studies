@@ -28,6 +28,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
         }
         return (
             <div
+                style={{ color: option.value }}
                 key={option.value}
                 onClick={() => onSelectedChange(option)}
                 className="item"
@@ -40,6 +41,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
     return (
         <div ref={ref} className="ui form">
             <div className="field">
+                <br />
                 <label className="label">Select a Color</label>
                 <div
                     onClick={() => setOpen(!open)}
@@ -48,7 +50,9 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
                     }`}
                 >
                     <i className="dropdown icon"></i>
-                    <div className="text">{selected.label}</div>
+                    <div style={{ color: selected.value }} className="text">
+                        {selected.label}
+                    </div>
                     <div className={`menu ${open ? "visible transition" : ""}`}>
                         {renderedOptions}
                     </div>
