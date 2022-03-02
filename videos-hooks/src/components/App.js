@@ -5,23 +5,9 @@ import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
 
 const App = () => {
-    const [videos, setVideos] = useState([]);
     const [selectedVideo, setSelectedVideo] = useState(null);
 
-    useEffect(() => {
-        onTermSubmit("worship");
-    }, []);
-
-    const onTermSubmit = async (term) => {
-        // console.log("Term from the SearchBar component: ", term);
-        const response = await youtube.get("/search", {
-            params: {
-                q: term,
-            },
-        });
-        setVideos(response.data.items);
-        setSelectedVideo(response.data.items[0]);
-    };
+    // setSelectedVideo(response.data.items[0]);
 
     return (
         <div className="ui container">
