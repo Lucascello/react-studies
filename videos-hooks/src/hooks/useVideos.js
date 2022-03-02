@@ -6,11 +6,11 @@ const useVideos = (defaultSearchTerm) => {
 
     useEffect(() => {
         videoSearch(defaultSearchTerm);
-    }, []);
+    }, [defaultSearchTerm]);
 
     const videoSearch = async (term) => {
         // console.log("Term from the SearchBar component: ", term);
-        const response = await youtube.get("/videoSearch", {
+        const response = await youtube.get("/search", {
             params: {
                 q: term,
             },
