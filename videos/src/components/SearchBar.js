@@ -22,7 +22,7 @@ export default class SearchBar extends React.Component {
                         <label>Video Search</label>
                         <input
                             type="text"
-                            valeu={this.state.term}
+                            value={this.state.term}
                             onChange={this.onInputChange}
                         />
                     </div>
