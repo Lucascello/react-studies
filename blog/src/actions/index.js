@@ -1,5 +1,13 @@
 import jsonPlaceholder from "../apis/jsonPlaceholder";
-import _ from "lodash";
+// import _ from "lodash";
+
+// When we call an action creator from inside an action creator, we need to make sure to dispatch the result from calling an action creator
+
+export const fetchPostsAndUsers = () => async (dispatch) => {
+    await dispatch(fetchPosts());
+
+
+};
 
 // export const fetchPosts = async () => {
 //     // Bad approach!!! Doesn't work
@@ -44,6 +52,8 @@ export const fetchUser = (id) => async (dispatch) => {
     });
 };
 
+/////////////////////////////////////////////////////////////////////////////////////////
+
 // Code below can be refactored too...
 
 // export const fetchUser = id => dispatch => {
@@ -62,3 +72,5 @@ export const fetchUser = (id) => async (dispatch) => {
 //         payload: response.data,
 //     });
 // });
+
+////////////////////////////////////////////////////////////////////////////////////////
