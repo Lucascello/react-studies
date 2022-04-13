@@ -29,7 +29,7 @@ class GoogleAuth extends React.Component {
         }
     };
 
-    ///////// The code below was working without using redux
+    ///////// The code below was working without using redux for managing state
     // onAuthChange = () => {
     //     this.setState({ isSignedIn: this.auth.isSignedIn.get() });
     // };
