@@ -16,6 +16,7 @@ class StreamCreate extends React.Component {
     renderInput = ({ input, label, meta }) => {
         //console.log(formProps); form props coming from redux-form
         // console.log(meta);
+        const className = `field ${meta.error && meta.touched ? "error" : ""}`;
         return (
             // <input
             //     onChange={formProps.input.onChange}
@@ -26,7 +27,7 @@ class StreamCreate extends React.Component {
             // <input {...formProps.input} />
 
             // code above destructuring formProps
-            <div className="field">
+            <div className={className}>
                 <label>{label}</label>
                 <input {...input} autoComplete="off" />
                 {/* <div>{meta.error}</div> line below is the reformated code */}
@@ -44,7 +45,7 @@ class StreamCreate extends React.Component {
         return (
             <form
                 onSubmit={this.props.handleSubmit(this.onSubmit)}
-                className="ui form"
+                className="ui form error"
             >
                 <Field
                     name="title"
