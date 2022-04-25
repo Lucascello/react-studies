@@ -2,8 +2,18 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 
 class StreamCreate extends React.Component {
+    renderError(/*meta*/ { error, touched }) {
+        if (touched && error) {
+            return (
+                <div className="ui error message">
+                    <div className="header">{error}</div>
+                </div>
+            );
+        }
+    }
+
     //renderInput(formProps) {
-    renderInput({ input, label, meta }) {
+    renderInput = ({ input, label, meta }) => {
         //console.log(formProps); form props coming from redux-form
         // console.log(meta);
         return (
@@ -18,11 +28,12 @@ class StreamCreate extends React.Component {
             // code above destructuring formProps
             <div className="field">
                 <label>{label}</label>
-                <input {...input} />
-                <div>{meta.error}</div>
+                <input {...input} autoComplete="off" />
+                {/* <div>{meta.error}</div> line below is the reformated code */}
+                {this.renderError(meta)}
             </div>
         );
-    }
+    };
 
     onSubmit(formValues) {
         console.log(formValues);
