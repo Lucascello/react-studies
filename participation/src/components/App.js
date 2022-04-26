@@ -4,8 +4,9 @@ import Header from "./Header";
 const App = () => {
     return (
         <>
-            <br />
-            <div>Praise Team Sunday Service Participation</div>
+            <div className="title">
+                <h1 className="pt">Praise Team Sunday Service Participation</h1>
+            </div>
             <table class="ui selectable celled table">
                 <Header />
                 <tbody>
