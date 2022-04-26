@@ -19,7 +19,7 @@ td {
 }
 
 thead {
-    background-color: lightgrey;
+    background-color: rgb(193, 190, 190);
 }
 
 .row:hover {
@@ -36,6 +36,7 @@ select {
 
 .name {
     padding: 0 30px;
+    background-color: rgb(233, 227, 227);
 }
 
 .leave {
