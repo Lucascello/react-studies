@@ -8,58 +8,70 @@ const Body = () => {
 
     return (
         <tbody>
-            <tr>
-                <td>Lucas</td>
+            <tr className="row">
+                <td className="name">
+                    <h3>Lucas</h3>
+                </td>
                 <Choices />
             </tr>
-            <tr>
-                <td>Mathias</td>
+            <tr className="row">
+                <td className="name">
+                    <h3>Mathias</h3>
+                </td>
                 <Choices />
             </tr>
-            <tr>
-                <td>Kenya</td>
+            <tr className="row">
+                <td className="name">
+                    <h3>Kenya</h3>
+                </td>
                 <Choices />
             </tr>
-            <tr>
-                <td>Vilma</td>
+            <tr className="row">
+                <td className="name">
+                    <h3>Vilma</h3>
+                </td>
                 <Choices />
             </tr>
-            {/* <tr>
-                <td>Charity</td>
-                <td class="positive">Approved</td>
-                <td class="warning">Requires call</td>
-            </tr> */}
-            <tr>
-                <td>Charity</td>
+            <tr className="row">
+                <td className="name">
+                    <h3>Charity</h3>
+                </td>
                 <Choices />
             </tr>
-            {/* <tr>
-                <td>Filipe</td>
-                <td class="negative">Denied</td>
-                <td>None</td>
-            </tr> */}
-            <tr>
-                <td>Filipe</td>
+            <tr className="row">
+                <td className="name">
+                    <h3>Filipe</h3>
+                </td>
                 <Choices />
             </tr>
-            <tr>
-                <td>Andrei</td>
+            <tr className="row">
+                <td className="name">
+                    <h3>Andrei</h3>
+                </td>
                 <Choices />
             </tr>
-            <tr>
-                <td>Danilo</td>
+            <tr className="row">
+                <td className="name">
+                    <h3>Danilo</h3>
+                </td>
                 <Choices />
             </tr>
-            <tr>
-                <td>Debora</td>
+            <tr className="row">
+                <td className="name">
+                    <h3>Debora</h3>
+                </td>
                 <Choices />
             </tr>
-            <tr>
-                <td>Erika</td>
+            <tr className="row">
+                <td className="name">
+                    <h3>Erika</h3>
+                </td>
                 <Choices />
             </tr>
-            <tr>
-                <td>Foster</td>
+            <tr className="row">
+                <td className="name">
+                    <h3>Foster</h3>
+                </td>
                 <Choices />
             </tr>
         </tbody>

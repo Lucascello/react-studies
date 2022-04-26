@@ -12,29 +12,29 @@ const Inactive = () => {
             </thead>
             <tbody>
                 <tr class="warning">
-                    <td>Stefanie</td>
-                    <td>Inactive</td>
-                    <td>Parental Leave</td>
+                    <td className="name leave">Stefanie</td>
+                    <td className="name leave">Inactive</td>
+                    <td className="name leave">Parental Leave</td>
                 </tr>
                 <tr class="warning">
-                    <td>Ana Carolina</td>
-                    <td>Inactive</td>
-                    <td>Parental Leave</td>
+                    <td className="name leave">Ana Carolina</td>
+                    <td className="name leave">Inactive</td>
+                    <td className="name leave">Parental Leave</td>
                 </tr>
                 <tr class="warning">
-                    <td>Jia</td>
-                    <td>Inactive</td>
-                    <td>Parental Leave</td>
+                    <td className="name leave">Jia</td>
+                    <td className="name leave">Inactive</td>
+                    <td className="name leave">Parental Leave</td>
                 </tr>
                 <tr class="negative">
-                    <td>Jieun</td>
-                    <td>Inactive</td>
-                    <td>Unknown</td>
+                    <td className="name unknown">Jieun</td>
+                    <td className="name unknown">Inactive</td>
+                    <td className="name unknown">Unknown</td>
                 </tr>
                 <tr class="negative">
-                    <td>Kirsten</td>
-                    <td>Inactive</td>
-                    <td>Unknown</td>
+                    <td className="name unknown">Kirsten</td>
+                    <td className="name unknown">Inactive</td>
+                    <td className="name unknown">Unknown</td>
                 </tr>
             </tbody>
         </table>
