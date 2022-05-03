@@ -2,7 +2,7 @@ import React from "react";
 
 const DropDown = () => {
     return (
-        <select name="select" multiple="" class="dropdown">
+        <select name="select" multiple="" className="dropdown">
             <option value="">Select One</option>
             <option value="all">✅ ✅ Thursday & Sunday</option>
             <option value="sunday">❌ ✅ Only Sunday</option>

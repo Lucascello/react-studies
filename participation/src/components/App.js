@@ -9,7 +9,7 @@ const App = () => {
             <div className="title">
                 <h1 className="pt">Praise Team Sunday Service Participation</h1>
             </div>
-            <table class="ui selectable celled table">
+            <table>
                 <Header />
                 <Body />
             </table>
