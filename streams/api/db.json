@@ -14,6 +14,30 @@
       "title": "My Stream",
       "description": "This is a great stream.",
       "id": 3
+    },
+    {
+      "title": "I Created This Stream",
+      "description": "This was made by me!",
+      "userId": "102334540429789369131",
+      "id": 4
+    },
+    {
+      "title": "Stream Test",
+      "description": "I was not signed in here!!!",
+      "userId": null,
+      "id": 5
+    },
+    {
+      "title": "Another Test",
+      "description": "Just to make sure I have enough data (without signing in)!!!",
+      "userId": null,
+      "id": 6
+    },
+    {
+      "title": "Great Stream",
+      "description": "Just another One.",
+      "userId": "102334540429789369131",
+      "id": 7
     }
   ]
 }
