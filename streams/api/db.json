@@ -29,12 +29,6 @@
       "id": 5
     },
     {
-      "title": "Great Stream",
-      "description": "Just another One.",
-      "userId": "102334540429789369131",
-      "id": 6
-    },
-    {
       "title": "Programatic Navigation ",
       "description": "Routing back to all streams after the stream is created (using History)",
       "userId": "102334540429789369131",
